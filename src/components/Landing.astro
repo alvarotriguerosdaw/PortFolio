@@ -3,16 +3,17 @@ import LinkedIn from "../icons/LinkedIn.astro"
 import Github from "../icons/Github.astro"
 ---
 
+
 <section class="w-full h-screen flex flex-row">
     <div class="bg-[#0B1D51] w-[30%] flex items-center justify-center">
         <div class="w-[90%] rounded-full border-2 border-white overflow-hidden">
-            <img src="/public/Perfil.png" alt="">
+            <img src="/Perfil.png" alt="Imagen de icono">
         </div>
     </div>
     <div class="bg-[#725CAD] w-full text-white">
         <div>
             <h1 class="">Álvaro <span class="text-[#8CCDEB]">Trigueros</span></h1>
-            <h2 class="text-yellow-300">Desarrollador de Aplicaciones Web</h2>
+            <h2 class="text-yellow-300"><span id="element"></span></h2>
             <p>Bienvenidos a mi Portfolios</p>
             <p>Si quieres ponerte en contacto conmigo <span class="text-[#8CCDEB] underline">alvarotriguerosdaw@gmail.com</span></p>
         </div>
@@ -21,12 +22,12 @@ import Github from "../icons/Github.astro"
         </button>
         <ul class="flex flex-row gap-5">
             <li>
-                <a href="https://github.com/alvarotriguerosdaw">
+                <a href="https://github.com/alvarotriguerosdaw" target="_blank">
                     <Github class="h-6 w-6"/>
                 </a>
             </li>
             <li>
-                <a href="www.linkedin.com/in/alvarotriguerosvazquez">
+                <a href="www.linkedin.com/in/alvarotriguerosvazquez" target="_blank">
                     <LinkedIn class="h-6 w-6"/>
                 </a>
             </li>
@@ -35,3 +36,6 @@ import Github from "../icons/Github.astro"
         </ul>
     </div>
 </section>
+
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script type="module" src="/public/script/typed.js"></script>
