@@ -2,25 +2,77 @@
   <nav class="fixed w-full h-16 bg-[#bcc0ca] flex items-center shadow z-50">
     <ul class="grid grid-cols-[10%_repeat(4,1fr)] w-full h-full items-center text-center">
       
-      <li class="text-lg font-semibold">
-        <a >&lt;AT/&gt;</a>
+      <li id="nav-home" class="text-lg font-semibold h-full relative flex flex-col items-center justify-center">
+        <div>
+          <a>&lt;AT/&gt;</a>
+        </div>
+        <div id="underline-home" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
       </li>
 
-      <li>
-        <a>About me</a>
+      <li id="nav-about-me" class="h-full relative flex flex-col items-center justify-center">
+        <div>
+          <a>About me</a>
+        </div>
+        <div id="underline-about-me" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
       </li>
 
-      <li>
-        <a>Proyectos</a>
+      <li id="nav-proyectos" class="h-full relative flex flex-col items-center justify-center">
+        <div>
+          <a>Proyectos</a>
+        </div>
+        <div id="underline-proyectos" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
       </li>
 
-      <li>
-        <a>Skills</a>
+      <li id="nav-skills" class="h-full relative flex flex-col items-center justify-center">
+        <div>
+          <a>Skills</a>
+        </div>
+        <div id="underline-skills" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
       </li>
 
-      <li>
-        <a>Contacto</a>
+      <li id="nav-contacto" class="h-full relative flex flex-col items-center justify-center">
+        <div>
+          <a>Contacto</a>
+        </div>
+        <div id="underline-contacto" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
       </li>
     </ul>
   </nav>
 </header>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sections = [
+      { id: 'home', navId: 'underline-home' },
+      { id: 'about-me', navId: 'underline-about-me' },
+      { id: 'proyectos', navId: 'underline-proyectos' },
+      { id: 'skills', navId: 'underline-skills' },
+      { id: 'contacto', navId: 'underline-contacto' },
+    ];
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const sectionId = entry.target.id;
+        const underlineId = `underline-${sectionId}`;
+        const underline = document.getElementById(underlineId);
+
+        if (!underline) return;
+
+        if (entry.isIntersecting) {
+          underline.classList.remove('hidden');
+          underline.classList.add('block');
+        } else {
+          underline.classList.remove('block');
+          underline.classList.add('hidden');
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+
+    sections.forEach(({ id }) => {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    });
+  });
+</script>
