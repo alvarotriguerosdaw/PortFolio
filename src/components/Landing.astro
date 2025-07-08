@@ -6,13 +6,13 @@ import TypedText from '../components/TypedText.jsx';
 ---
 
 
-<section id="home" class="w-full h-[95vh] flex flex-row">
-    <div class="bg-[#0B1D51] w-[30%] flex items-center justify-center">
-        <div class="w-[90%] rounded-full border-2 border-white overflow-hidden">
+<section id="home" class="w-full h-[95vh] flex flex-row border-r-3 border-l-3 border-b-3 border-black">
+    <div class="bg-gradient-to-b from-[#5252f8] to-[#1e0a54] w-[30%] flex items-center justify-center border-r-3 border-black">
+        <div class="w-[90%] rounded-full border-3 border-black overflow-hidden">
             <img src="/Perfil.png" alt="Imagen de icono">
         </div>
     </div>
-    <div class="bg-[#725CAD] w-full text-white flex flex-row items-center justify-start">
+    <div class="bg-gradient-to-b from-[#a160de] to-[#42265a] w-full text-white flex flex-row items-center justify-start">
         <div class="mx-20">
             <div class="mb-6">
                 <h1 class="font-bold text-8xl my-6">Álvaro <span class="text-[#8CCDEB]">Trigueros</span></h1>
@@ -20,13 +20,15 @@ import TypedText from '../components/TypedText.jsx';
                 <p class="text-2xl my-6">Bienvenidos a mi Portfolios</p>
                 <p class="text-2xl my-6">Si quieres ponerte en contacto conmigo <span class="text-[#8CCDEB] underline">alvarotriguerosdaw@gmail.com</span></p>
             </div>
-            <a class="inline-block text-[#8CCDEB] my-6 border border-[#8CCDEB] rounded-lg bg-[#0B1D51] cursor-pointer px-4 py-2 hover:scale-105 transition-transform duration-200" download href="/Álvaro_Trigueros_VázquezCV.pdf">
+            <a class="inline-block text-[#8CCDEB] my-6 border text-2xl border-[#8CCDEB] rounded-lg bg-[#0B1D51] cursor-pointer px-4 py-2 hover:scale-105 transition-transform duration-200" download href="/Álvaro_Trigueros_VázquezCV.pdf">
                <div class="flex flex-row gap-1">
                 Descargar CV
-                <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.5"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></svg>
+                <div class="flex items-center justify-center">
+                <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="2"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-download"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" /><path d="M7 11l5 5l5 -5" /><path d="M12 4l0 12" /></svg>
+                </div>
                 </div>
             </a>
-            <ul class="flex flex-row gap-12 my-6">
+            <ul class="flex flex-row gap-12 my-6 items-center">
                 <li>
                     <a href="https://github.com/alvarotriguerosdaw" target="_blank">
                         <Github class="size-14 hover:scale-105 transition-transform duration-200"/>
@@ -38,7 +40,11 @@ import TypedText from '../components/TypedText.jsx';
                     </a>
                 </li>
                
-
+                <li>
+                    <a href="www.linkedin.com/in/alvarotriguerosvazquez" target="_blank">
+                        <Mail class="size-14 hover:scale-105 transition-transform duration-200"/>
+                    </a>
+                </li>
             </ul>
         </div>
     </div>
