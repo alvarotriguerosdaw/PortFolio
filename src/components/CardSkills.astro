@@ -1,0 +1,15 @@
+---
+import SkillsIcon from "./SkillsIcon.astro"
+const {title, color, skills} = Astro.props;
+---
+
+<div class="bg-gradient-to-b from-[#2d2d2d] to-[#121212] border-3 border-black rounded-xl flex flex-col min-w-[250px]">
+  <div class=" p-4">
+    <h3 class="text-3xl mt-4 text-center font-bold mb-2 text-yellow-300">{title}</h3>
+  </div>
+  <div class="grid grid-cols-3 gap-4 p-4 mb-4">
+    {skills.map(skill => (
+      <SkillsIcon name={skill.name} icono={skill.icono} />
+    ))}
+  </div>
+</div>
