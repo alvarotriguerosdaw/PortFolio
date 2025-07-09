@@ -1,0 +1,35 @@
+---
+import Github from "../icons/Github.astro"
+import Link from "../icons/Link.astro"
+---
+
+<div class="bg-[#8e61d6] w-[280px] border-3 border-black rounded-2xl overflow-hidden shadow-lg flex flex-col items-center text-center text-white">
+  <!-- Imagen y etiqueta -->
+  <div class="relative w-full h-40 border-b-2 border-black overflow-hidden">
+    <p class="absolute top-2 left-2 bg-gray-300 text-black px-2 py-0.5 rounded-2xl text-xs font-semibold border border-black">
+      FullStack
+    </p>
+    <img src="/Perfil.png" alt="imagen proyecto" class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110" />
+  </div>
+
+  <!-- Contenido -->
+  <div class="p-3 flex flex-col gap-3 w-full">
+    <h3 class="text-xl font-bold text-yellow-300">Título del Proyecto</h3>
+    <p class="text-sm text-[#c8ecff] leading-tight text-pretty">
+      Descripción breve del proyecto que puede ocupar dos líneas.
+    </p>
+
+    <!-- Tecnologías -->
+    <ul class="flex flex-wrap justify-center gap-1">
+      <li class="bg-gray-200 text-black py-1 px-2 border border-black rounded-full text-xs font-medium">React</li>
+      <li class="bg-gray-200 text-black py-1 px-2 border border-black rounded-full text-xs font-medium">JS</li>
+      <li class="bg-gray-200 text-black py-1 px-2 border border-black rounded-full text-xs font-medium">Astro</li>
+    </ul>
+
+    <!-- Links -->
+    <div class="flex justify-center gap-4 mt-1">
+      <Github class="size-10 cursor-pointer hover:scale-110 transition-transform text-white" />
+      <Link class="size-10 cursor-pointer hover:scale-110 transition-transform text-white" />
+    </div>
+  </div>
+</div>
