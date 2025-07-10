@@ -34,26 +34,29 @@ import Send  from "../icons/Send.astro"
         </div>
     </div>
     <div class="h-full">
-        <form action="" class="px-4 py-8 border-3 border-black rounded-2xl bg-gradient-to-b from-[#362664] to-[#081439] flex flex-col  justify-center gap-6">
+        <form action="https://formspree.io/f/mkgbdjqp"  method="POST" class="px-4 py-8 border-3 border-black rounded-2xl bg-gradient-to-b from-[#362664] to-[#081439] flex flex-col  justify-center gap-6">
             <input 
                 type="text" 
                 class="border-3 border-black rounder p-2 px-4 bg-gray-400 rounded-2xl text-xl" 
                 placeholder="Nombre"
+                name="Nombre"
             >
             <input 
                 type="email" 
                 class="border-3 border-black rounder p-2 px-4 bg-gray-400 rounded-2xl text-xl" 
                 placeholder="Correo Electrónico"
+                name="Email"
             >
             <input 
                 type="text"
                 class="border-3 border-black rounder p-2 px-4 bg-gray-400 rounded-2xl text-xl"  
                 placeholder="Asunto"
+                name="Asunto"
             >
             <textarea 
-                name="mensaje"
                 id="mensaje"
                 placeholder="Mensaje"
+                name="Mensaje"
                 class="border-3 border-black p-4 bg-gray-400 rounded-2xl text-xl h-40"
             ></textarea>
 
