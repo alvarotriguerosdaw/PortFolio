@@ -1,6 +1,8 @@
 ---
 import Github from "../icons/Github.astro";
 import Link from "../icons/Link.astro";
+
+const {title, descripcion, imagen, tecnologias, github, enlace} = Astro.props;
 ---
 
 <div
@@ -14,45 +16,44 @@ import Link from "../icons/Link.astro";
       FullStack
     </p>
     <img
-      src="/Perfil.png"
+      src=`${imagen}`
       alt="imagen proyecto"
       class="w-full h-full object-cover transition-transform duration-300 ease-in-out hover:scale-110 z-10"
     />
   </div>
 
   <div class="p-3 flex flex-col gap-3 w-full">
-    <h3 class="text-xl font-bold text-yellow-300">Título del Proyecto</h3>
+    <h3 class="text-xl font-bold text-yellow-300">{title}</h3>
     <p class="text-sm text-[#c8ecff] leading-tight text-pretty">
-      Descripción breve del proyecto que puede ocupar dos líneas.
+      {descripcion}
     </p>
 
     <!-- Tecnologías -->
     <ul class="flex flex-wrap justify-center gap-1">
-      <li
-        class="bg-gray-200 text-black py-1 px-2 border border-black rounded-full text-xs font-medium"
-      >
-        React
-      </li>
-      <li
-        class="bg-gray-200 text-black py-1 px-2 border border-black rounded-full text-xs font-medium"
-      >
-        JS
-      </li>
-      <li
-        class="bg-gray-200 text-black py-1 px-2 border border-black rounded-full text-xs font-medium"
-      >
-        Astro
-      </li>
+      {
+        tecnologias.map(tecnologia => (
+          <li
+            class="bg-gray-200 text-black py-1 px-2 border border-black rounded-full text-xs font-medium"
+          >
+            {tecnologia}
+          </li>
+        ))
+      }
+      
     </ul>
 
     <!-- Links -->
     <div class="flex justify-center gap-4 mt-1">
-      <Github
-        class="size-10 cursor-pointer hover:scale-110 transition-transform text-white"
-      />
-      <Link
-        class="size-10 cursor-pointer hover:scale-110 transition-transform text-white"
-      />
+      <a href=`${github}` target="_blank">
+        <Github
+          class="size-10 cursor-pointer hover:scale-110 transition-transform text-white"
+        />
+      </a>
+      <a href=`${enlace}` target="_blank">
+        <Link
+          class="size-10 cursor-pointer hover:scale-110 transition-transform text-white"
+        />
+      </a>
     </div>
   </div>
 </div>
