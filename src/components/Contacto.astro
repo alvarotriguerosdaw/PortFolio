@@ -1,3 +1,69 @@
-<div id="contacto" class="w-full h-screen bg-blue-300 text-4xl">
-    Contacto
+---
+import Github from "../icons/Github.astro"
+import LinkedIn from "../icons/LinkedIn.astro"
+import Copy  from "../icons/Copy.astro"
+import Send  from "../icons/Send.astro"
+---
+
+<div id="contacto" class="w-full  bg-gradient-to-b from-[#3d0370] to-[#9859d0]  border-b-3 border-black text-4xl flex justify-center">
+  <div class="w-[60%] my-16 grid grid-cols-2 gap-8">
+    
+    <div class="flex flex-col mt-4">
+        <h2 class="my-4 text-7xl font-bold bg-gradient-to-b from-[#ff54f6] to-[#ffffff] text-transparent bg-clip-text py-4 underline">
+            Contacto
+        </h2>
+        <p class="text-pretty my-4 text-2xl text-white">
+            Si quieres <span class="text-[#8CCDEB]">contactar</span> conmigo, puedes hacerlo a través de las <span class="text-yellow-300">redes sociales</span> o del <span class="text-yellow- hover:scale-105 transition-transform duration-200">formulario de contacto</span>. Te responderé lo antes posible. ¡Gracias!
+        </p>
+        <div class="my-4 w-full py-2 flex flex-row items-center"> 
+            <div class="h-full flex-1 border-l-3 border-t-3 border-b-3 border-black bg-purple-400 p-2 pl-3 rounded-l-xl"> 
+                <p class="text-pretty text-2xl text-white">alvarotriguerosvazque@gmail.com</p> 
+            </div>
+            <div class="h-full border-3 border-black flex items-center justify-center bg-purple-600 p-2 pr-3 rounded-r-xl cursor-pointer group">
+                <Copy class="size-6 text-white group-hover:scale-105 transition-transform duration-200" />
+            </div>
+
+        </div>
+        <div class="my-4 flex flex-row gap-8">
+            <a href="https://github.com/alvarotriguerosdaw" target="_blank">
+                <Github class="size-16 hover:scale-105 transition-transform duration-200"/>
+            </a>
+            <a href="www.linkedin.com/in/alvaro-trigueros-vazquez" target="_blank">
+                <LinkedIn class="size-16 hover:scale-105 transition-transform duration-200"/>
+            </a>
+        </div>
+    </div>
+    <div class="h-full">
+        <form action="" class="px-4 py-8 border-3 border-black rounded-2xl bg-gradient-to-b from-[#362664] to-[#081439] flex flex-col  justify-center gap-6">
+            <input 
+                type="text" 
+                class="border-3 border-black rounder p-2 px-4 bg-gray-400 rounded-2xl text-xl" 
+                placeholder="Nombre"
+            >
+            <input 
+                type="email" 
+                class="border-3 border-black rounder p-2 px-4 bg-gray-400 rounded-2xl text-xl" 
+                placeholder="Correo Electrónico"
+            >
+            <input 
+                type="text"
+                class="border-3 border-black rounder p-2 px-4 bg-gray-400 rounded-2xl text-xl"  
+                placeholder="Asunto"
+            >
+            <textarea 
+                name="mensaje"
+                id="mensaje"
+                placeholder="Mensaje"
+                class="border-3 border-black p-4 bg-gray-400 rounded-2xl text-xl h-40"
+            ></textarea>
+
+            <button 
+                type="submit"
+                class="border-3 border-black rounder font-semibold p-2 text-yellow-300 bg-[#0B1D51] cursor-pointer rounded-2xl hover:scale-105 transition-transform duration-200 flex flex-row justify-center items-center gap-3" 
+            >
+                ENVIAR <Send class="size-6 "/>
+            </button>
+        </form>
+    </div>
+  </div>
 </div>
