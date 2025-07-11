@@ -23,7 +23,7 @@ const CopyEmail = () => {
         });
       } catch (err) {
         console.error("Error copiando el correo:", err);
-        toast.error("❌ Hubo un error al copiar el correo.",{
+        toast.error("Hubo un error al copiar",{
           style: {
             background: "#a15dbb", 
             fontSize: "1rem",

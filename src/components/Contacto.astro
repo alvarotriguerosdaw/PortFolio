@@ -20,7 +20,7 @@ import {CopyEmail} from "./CopyEmail.jsx";
         </p>
         <div class="my-4 py-2 flex flex-row items-center"> 
             <div class="h-full flex-1 items-center border-l-3 border-t-3 border-b-3 border-black bg-[#a15dbb] p-2 pl-3 rounded-l-xl"> 
-                <p id="textEmail" class="ml-2 text-pretty text-2xl text-white">alvarotriguerosdaw.com</p> 
+                <p id="textEmail" class="ml-2 text-pretty text-2xl text-white">alvarotriguerosdaw@gmail.com</p> 
             </div>
             <button id="btnCopy" class="h-full border-3 border-black flex items-center justify-center bg-purple-600 p-2 pr-3 rounded-r-xl cursor-pointer group">
                 <Copy class="size-6 text-white group-hover:scale-105 transition-transform duration-200" />
@@ -37,39 +37,51 @@ import {CopyEmail} from "./CopyEmail.jsx";
         </div>
     </div>
     <div class="h-full">
-        <form action="https://formspree.io/f/mkgbdjqp"  method="POST" class="px-4 py-8 border-3 border-black rounded-2xl bg-gradient-to-b from-[#362664] to-[#081439] flex flex-col  justify-center gap-6">
+        <form id="formularioContacto" action="https://formspree.io/f/mkgbdjqp" method="POST" class="px-4 py-8 border-3 border-black rounded-2xl bg-gradient-to-b from-[#362664] to-[#081439] flex flex-col  justify-center gap-6">
             <input 
                 type="text" 
                 class="border-3 border-black p-2 px-4 bg-gray-400 rounded-2xl text-xl" 
                 placeholder="Nombre"
                 name="Nombre"
+                id="Nombre"
             >
             <input 
                 type="email" 
                 class="border-3 border-black  p-2 px-4 bg-gray-400 rounded-2xl text-xl" 
                 placeholder="Correo Electrónico"
                 name="Email"
+                id="Email"
             >
             <input 
                 type="text"
                 class="border-3 border-black p-2 px-4 bg-gray-400 rounded-2xl text-xl"  
                 placeholder="Asunto"
                 name="Asunto"
+                id="Asunto"
             >
             <textarea 
-                id="mensaje"
+                id="Mensaje"
                 placeholder="Mensaje"
                 name="Mensaje"
                 class="border-3 border-black p-4 bg-gray-400 rounded-2xl text-xl h-40"
             ></textarea>
 
             <button 
+                id="btnEnviar"
                 type="submit"
-                class="border-3 border-black rounder font-semibold p-2 text-yellow-300 bg-gradient-to-b from-[#a218f3] to-[#320738] cursor-pointer rounded-2xl hover:scale-105 transition-transform duration-200 flex flex-row justify-center items-center gap-3" 
+                class="border-3 border-black rounder font-semibold p-2 text-yellow-300 bg-gradient-to-b from-[#a218f3] to-[#320738] cursor-pointer rounded-2xl group " 
             >
-                ENVIAR <Send class="size-6 "/>
+                <span class="group-hover:scale-105 transition-transform duration-200 flex flex-row justify-center items-center gap-3">ENVIAR <Send class="size-6 "/></span>
             </button>
         </form>
     </div>
   </div>
 </div>
+
+<script type="module">
+  window.onbeforeunload = () => {
+  for(const form of document.getElementsByTagName('form')) {
+    form.reset();
+  }
+}
+</script>
