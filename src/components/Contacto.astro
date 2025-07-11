@@ -3,26 +3,27 @@ import Github from "../icons/Github.astro"
 import LinkedIn from "../icons/LinkedIn.astro"
 import Copy  from "../icons/Copy.astro"
 import Send  from "../icons/Send.astro"
+import {CopyEmail} from "./CopyEmail.jsx";
 ---
 
 <div id="contacto" class="w-full  bg-gradient-to-b from-[#3d0370] to-[#9859d0]  border-b-3 border-black text-4xl flex justify-center">
   <div class="w-[60%] my-16 grid grid-cols-2 gap-8">
     
-    <div class="flex flex-col mt-4">
+    <div class="flex flex-col mt-4 w-[90%]">
         <h2 class="my-4 text-7xl font-bold bg-gradient-to-b from-[#ff54f6] to-[#ffffff] text-transparent bg-clip-text py-4 underline">
             Contacto
         </h2>
         <p class="text-pretty my-4 text-2xl text-white">
             Si quieres <span class="text-[#8CCDEB] font-semibold">contactar</span> conmigo, puedes hacerlo a través de las <span class="text-yellow-300 font-semibold">redes sociales</span> o del <span class="text-yellow-300 font-semibold">formulario</span> de contacto.Te responderé lo antes posible. ¡Gracias 👋!
         </p>
-        <div class="my-4 w-full py-2 flex flex-row items-center"> 
-            <div class="h-full flex-1 border-l-3 border-t-3 border-b-3 border-black bg-[#a15dbb] p-2 pl-3 rounded-l-xl"> 
-                <p class="text-pretty text-2xl text-white">alvarotriguerosvazque@gmail.com</p> 
+        <div class="my-4 py-2 flex flex-row items-center"> 
+            <div class="h-full flex-1 items-center border-l-3 border-t-3 border-b-3 border-black bg-[#a15dbb] p-2 pl-3 rounded-l-xl"> 
+                <p id="textEmail" class="ml-2 text-pretty text-2xl text-white">alvarotriguerosdaw.com</p> 
             </div>
-            <div class="h-full border-3 border-black flex items-center justify-center bg-purple-600 p-2 pr-3 rounded-r-xl cursor-pointer group">
+            <button id="btnCopy" class="h-full border-3 border-black flex items-center justify-center bg-purple-600 p-2 pr-3 rounded-r-xl cursor-pointer group">
                 <Copy class="size-6 text-white group-hover:scale-105 transition-transform duration-200" />
-            </div>
-
+            </button>
+            <CopyEmail client:load/>
         </div>
         <div class="my-4 flex flex-row gap-8">
             <a href="https://github.com/alvarotriguerosdaw" target="_blank">
@@ -62,7 +63,7 @@ import Send  from "../icons/Send.astro"
 
             <button 
                 type="submit"
-                class="border-3 border-black rounder font-semibold p-2 text-yellow-300 bg-[#0B1D51] cursor-pointer rounded-2xl hover:scale-105 transition-transform duration-200 flex flex-row justify-center items-center gap-3" 
+                class="border-3 border-black rounder font-semibold p-2 text-yellow-300 bg-gradient-to-b from-[#a218f3] to-[#320738] cursor-pointer rounded-2xl hover:scale-105 transition-transform duration-200 flex flex-row justify-center items-center gap-3" 
             >
                 ENVIAR <Send class="size-6 "/>
             </button>
