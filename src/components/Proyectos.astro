@@ -3,12 +3,12 @@ import CardProyectos from "./CardProyectos.astro";
 import {proyectoData} from "../data/proyecto";
 ---
 
-<div id="proyectos" class="w-full bg-gradient-to-b from-[#3d0370] to-[#9859d0]  border-b-3 border-black text-4xl flex justify-center">
+<div id="proyectos" class="w-full overflow-hidden bg-gradient-to-b from-[#3d0370] to-[#9859d0]  border-b-3 border-black text-4xl flex justify-center">
   <div class="w-[60%] mt-16">
     <h2 class="text-7xl text-center font-bold bg-gradient-to-b from-[#ff54f6] to-[#ffffff] text-transparent bg-clip-text py-4 underline">
       Proyectos&lt;/&gt;
     </h2>
-    <div class="mt-20 mb-10 flex flex-row gap-8 justify-between">
+    <div class="mt-20 mb-10 flex flex-row flex-wrap gap-8 justify-between">
       {
       proyectoData.map((proyectoItem) =>(
         <CardProyectos 

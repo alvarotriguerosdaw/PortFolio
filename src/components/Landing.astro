@@ -5,71 +5,77 @@ import Mail from "../icons/Mail.astro"
 import TypedText from '../components/TypedText.jsx';
 ---
 
-
-<section id="home" class="w-full min-h-[95vh] grid grid-cols-[30%_70%] border-r-3 border-l-3 border-b-3 border-black">
-    <div class="bg-gradient-to-b from-[#5252f8] to-[#1e0a54] flex items-center justify-center border-r-3 border-black">
-        <div class="w-[90%] rounded-full border-3 border-black overflow-hidden">
-            <img src="/Perfil.png" alt="Imagen de icono">
-        </div>
+<section id="home" class="w-full overflow-hidden min-h-[95vh] grid grid-cols-1 md:grid-cols-[40%_60%] lg:grid-cols-[30%_70%] border-r-3 border-l-3 border-b-3 border-black">
+  <!-- Imagen -->
+  <div class="bg-gradient-to-b from-[#5252f8] to-[#1e0a54] flex items-center justify-center border-b-3 md:border-b-0 md:border-r-3 border-black p-6">
+    <div class="w-[70%] md:w-[80%] lg:w-[90%] rounded-full border-3 border-black overflow-hidden">
+      <img src="/Perfil.png" alt="Imagen de icono" class="w-full h-auto" />
     </div>
-    <div class="bg-gradient-to-b from-[#a160de] to-[#42265a] w-full text-white flex flex-row items-center justify-start">
-        <div class="mx-20">
-            <div class="mb-6">
-                <h1 class="font-bold text-8xl my-6">Álvaro <span class="text-[#8CCDEB]">Trigueros</span></h1>
-                <h2 class="text-yellow-300 text-4xl my-8"><TypedText client:load/></span></h2>
-                <p class="text-2xl my-6">Bienvenidos a mi Portfolios</p>
-                <p class="text-2xl my-6">Si quieres ponerte en contacto conmigo <span class="text-[#8CCDEB] underline">alvarotriguerosdaw@gmail.com</span></p>
-            </div>
-            <div class="relative inline-block my-6 hover:scale-105 transition-transform duration-200">
-          
-                <div class="absolute inset-0 translate-x-1 translate-y-1 border-3 border-black rounded-lg bg-[#040d28]"></div>  
-                
-                <a
-                  class="relative z-10 inline-block text-[#8CCDEB] text-2xl border-3 border-black rounded-lg bg-[#0B1D51] cursor-pointer px-4 py-2 "
-                  download
-                  href="/Álvaro_Trigueros_VázquezCV.pdf"
-                >
-                  <div class="flex flex-row gap-1 items-center font-semibold">
-                    Descargar CV
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="25"
-                      height="25"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="icon icon-tabler icon-tabler-download"
-                    >
-                      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                      <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
-                      <path d="M7 11l5 5l5 -5" />
-                      <path d="M12 4v12" />
-                    </svg>
-                  </div>
-                </a>
-            </div>
+  </div>
 
-            <ul class="flex flex-row gap-12 my-6 items-center">
-                <li>
-                    <a href="https://github.com/alvarotriguerosdaw" target="_blank">
-                        <Github class="size-14 hover:scale-105 transition-transform duration-200"/>
-                    </a>
-                </li>
-                <li>
-                    <a href="www.linkedin.com/in/alvaro-trigueros-vazquez" target="_blank">
-                        <LinkedIn class="size-14 hover:scale-105 transition-transform duration-200"/>
-                    </a>
-                </li>
-               
-                <li>
-                    <a href="#contacto" >
-                        <Mail class="h-18 hover:scale-105 transition-transform duration-200"/>
-                    </a>
-                </li>
-            </ul>
-        </div>
+  <!-- Contenido -->
+  <div class="bg-gradient-to-b from-[#a160de] to-[#42265a] w-full text-white flex items-center justify-center p-6">
+    <div class="w-full max-w-3xl">
+      <div class="mb-6">
+        <h1 class="font-bold text-5xl sm:text-6xl md:text-7xl lg:text-8xl my-6 leading-tight">
+          Álvaro <span class="text-[#8CCDEB]">Trigueros</span>
+        </h1>
+        <h2 class="text-yellow-300 text-2xl sm:text-3xl md:text-4xl my-4 sm:my-6">
+          <TypedText client:load />
+        </h2>
+        <p class="text-lg sm:text-xl md:text-2xl my-4">Bienvenidos a mi Portfolios</p>
+        <p class="text-lg sm:text-xl md:text-2xl my-4">
+          Si quieres ponerte en contacto conmigo <span class="text-[#8CCDEB] underline">alvarotriguerosdaw@gmail.com</span>
+        </p>
+      </div>
+
+      <div class="relative inline-block my-6 hover:scale-105 transition-transform duration-200">
+        <div class="absolute inset-0 translate-x-1 translate-y-1 border-3 border-black rounded-lg bg-[#040d28]"></div>
+        <a
+          class="relative z-10 inline-block text-[#8CCDEB] text-lg sm:text-xl md:text-2xl border-3 border-black rounded-lg bg-[#0B1D51] cursor-pointer px-4 py-2"
+          download
+          href="/Álvaro_Trigueros_VázquezCV.pdf"
+        >
+          <div class="flex flex-row gap-1 items-center font-semibold">
+            Descargar CV
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icon-tabler-download"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 17v2a2 2 0 0 0 2 2h12a2 2 0 0 0 2 -2v-2" />
+              <path d="M7 11l5 5l5 -5" />
+              <path d="M12 4v12" />
+            </svg>
+          </div>
+        </a>
+      </div>
+
+      <ul class="flex flex-wrap gap-8 sm:gap-10 my-6 items-center justify-center sm:justify-start">
+        <li>
+          <a href="https://github.com/alvarotriguerosdaw" target="_blank">
+            <Github class="w-12 h-12 hover:scale-105 transition-transform duration-200" />
+          </a>
+        </li>
+        <li>
+          <a href="https://www.linkedin.com/in/alvaro-trigueros-vazquez" target="_blank">
+            <LinkedIn class="w-12 h-12 hover:scale-105 transition-transform duration-200" />
+          </a>
+        </li>
+        <li>
+          <a href="#contacto">
+            <Mail class="w-12 h-12 hover:scale-105 transition-transform duration-200" />
+          </a>
+        </li>
+      </ul>
     </div>
+  </div>
 </section>
