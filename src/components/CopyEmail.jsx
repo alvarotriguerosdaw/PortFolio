@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { toast } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const CopyEmail = () => {
   useEffect(() => {
@@ -8,16 +10,36 @@ const CopyEmail = () => {
     const handleClick = async () => {
       try {
         await navigator.clipboard.writeText(textEmail);
-        alert("📋 ¡Correo copiado al portapapeles!");
+        toast.success("¡Correo copiado!", {
+          style: {
+            background: "#a15dbb", 
+            fontSize: "1rem",
+            color: "#ffffff",
+            border: "3px solid black",
+            marginTop: "1rem",
+            fontWeight: "600",
+            borderRadius: "1rem",
+          },
+        });
       } catch (err) {
         console.error("Error copiando el correo:", err);
-        alert("❌ Hubo un error al copiar el correo.");
+        toast.error("❌ Hubo un error al copiar el correo.",{
+          style: {
+            background: "#a15dbb", 
+            fontSize: "1rem",
+            color: "#ffffff",
+            border: "3px solid black",
+            marginTop: "1rem",
+            fontWeight: "600",
+            borderRadius: "1rem",
+          },
+        });
       }
     };
 
     btnCopy.addEventListener("click", handleClick);
   }, []);
 
-  return null;
+  return <Toaster position="top-center" />;
 };
 export { CopyEmail };
