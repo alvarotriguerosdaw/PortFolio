@@ -7,76 +7,88 @@ import {CopyEmail} from "./CopyEmail.jsx";
 
 ---
 
-<div id="contacto" class="w-full overflow-hidden bg-gradient-to-b from-[#3d0370] to-[#9859d0]  border-b-3 border-black text-4xl flex justify-center">
-
-  <div class="w-[60%] my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
+</div><div id="contacto" class="w-full overflow-hidden bg-gradient-to-b from-[#3d0370] to-[#9859d0] border-b-3 border-black text-4xl flex justify-center px-4 md:px-0">
+  <div class="w-full max-w-5xl my-12 md:my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
     
-    <div class="flex flex-col mt-4 w-[90%]">
-        <h2 class="my-4 text-7xl font-bold bg-gradient-to-b from-[#ff54f6] to-[#ffffff] text-transparent bg-clip-text py-4 underline">
+    <div class="flex flex-col mt-4 w-full md:w-[90%] mx-auto md:mx-0">
+        <h2 class="my-4 text-5xl md:text-7xl font-bold bg-gradient-to-b from-[#ff54f6] to-[#ffffff] text-transparent bg-clip-text py-4 underline text-center md:text-left">
             Contacto
         </h2>
-        <p class="text-pretty my-4 text-2xl text-white">
-            Si quieres <span class="text-[#8CCDEB] font-semibold">contactar</span> conmigo, puedes hacerlo a través de las <span class="text-yellow-300 font-semibold">redes sociales</span> o del <span class="text-yellow-300 font-semibold">formulario</span> de contacto.Te responderé lo antes posible. ¡Gracias 👋!
-        </p>
-        <div class="my-4 py-2 flex flex-row items-center"> 
-            <div class="h-full flex-1 items-center border-l-3 border-t-3 border-b-3 border-black bg-[#a15dbb] p-2 pl-3 rounded-l-xl"> 
-                <p id="textEmail" class="ml-2 text-pretty text-2xl text-white">alvarotriguerosdaw@gmail.com</p> 
-            </div>
-            <button id="btnCopy" class="h-full border-3 border-black flex items-center justify-center bg-purple-600 p-2 pr-3 rounded-r-xl cursor-pointer group">
-                <Copy class="size-6 text-white group-hover:scale-105 transition-transform duration-200" />
-            </button>
-            <CopyEmail client:load/>
-        </div>
-        <div class="my-4 flex flex-row gap-8">
-            <a href="https://github.com/alvarotriguerosdaw" target="_blank">
-                <Github class="size-16 hover:scale-105 transition-transform duration-200"/>
-            </a>
-            <a href="www.linkedin.com/in/alvaro-trigueros-vazquez" target="_blank">
-                <LinkedIn class="size-16 hover:scale-105 transition-transform duration-200"/>
-            </a>
-        </div>
-    </div>
-    <div class="h-full">
-        <form id="formularioContacto" action="https://formspree.io/f/mkgbdjqp" method="POST" class="px-4 py-8 border-3 border-black rounded-2xl bg-gradient-to-b from-[#362664] to-[#081439] flex flex-col  justify-center gap-6">
-            <input 
-                type="text" 
-                class="border-3 border-black p-2 px-4 bg-gray-400 rounded-2xl text-xl" 
-                placeholder="Nombre"
-                name="Nombre"
-                id="Nombre"
-            >
-            <input 
-                type="email" 
-                class="border-3 border-black  p-2 px-4 bg-gray-400 rounded-2xl text-xl" 
-                placeholder="Correo Electrónico"
-                name="Email"
-                id="Email"
-            >
-            <input 
-                type="text"
-                class="border-3 border-black p-2 px-4 bg-gray-400 rounded-2xl text-xl"  
-                placeholder="Asunto"
-                name="Asunto"
-                id="Asunto"
-            >
-            <textarea 
-                id="Mensaje"
-                placeholder="Mensaje"
-                name="Mensaje"
-                class="border-3 border-black p-4 bg-gray-400 rounded-2xl text-xl h-40"
-            ></textarea>
 
-            <button 
-                id="btnEnviar"
-                type="submit"
-                class="border-3 border-black font-semibold p-2 text-yellow-300 bg-gradient-to-b from-[#a218f3] to-[#320738] cursor-pointer rounded-2xl group " 
-            >
-                <span class="group-hover:scale-105 transition-transform duration-200 flex flex-row justify-center items-center gap-3">ENVIAR <Send class="size-6 "/></span>
-            </button>
-        </form>
+      <p class="text-pretty my-4 text-lg md:text-2xl text-white">
+        Si quieres <span class="text-[#8CCDEB] font-semibold">contactar</span> conmigo, puedes hacerlo a través de las <span class="text-yellow-300 font-semibold">redes sociales</span> o del <span class="text-yellow-300 font-semibold">formulario</span> de contacto.Te responderé lo antes posible. ¡Gracias 👋!
+      </p>
+      <div class="my-4 py-2 flex flex-row items-center"> 
+        <div class="h-full flex-1 items-center border-l-3 border-t-3 border-b-3 border-black bg-[#a15dbb] p-2 pl-3 rounded-l-xl overflow-x-auto"> 
+          <p id="textEmail" class="ml-2 text-pretty text-lg md:text-2xl text-white whitespace-nowrap">alvarotriguerosdaw@gmail.com</p> 
+        </div>
+        <button id="btnCopy" class="h-full border-3 border-black flex items-center justify-center bg-purple-600 p-2 pr-3 rounded-r-xl cursor-pointer group">
+          <Copy class="size-6 text-white group-hover:scale-105 transition-transform duration-200" />
+        </button>
+        <CopyEmail client:load/>
+      </div>
+      <div class="my-4 flex flex-row gap-6 md:gap-8">
+        <a href="https://github.com/alvarotriguerosdaw" target="_blank" class="flex items-center">
+          <Github class="size-12 md:size-16 hover:scale-105 transition-transform duration-200"/>
+        </a>
+        <a href="https://www.linkedin.com/in/alvaro-trigueros-vazquez" target="_blank" class="flex items-center">
+          <LinkedIn class="size-12 md:size-16 hover:scale-105 transition-transform duration-200"/>
+        </a>
+      </div>
     </div>
+    
+    <div class="h-full w-full px-2 md:px-0">
+      <form 
+  id="formularioContacto" 
+  action="https://formspree.io/f/mkgbdjqp" 
+  method="POST" 
+  class="border-2 md:border-3 border-black rounded-2xl bg-gradient-to-b from-[#362664] to-[#081439] flex flex-col justify-center gap-5 p-4 md:p-8 max-w-md mx-auto w-full"
+>
+  <input 
+    type="text" 
+    class="border-2 md:border-3 border-black p-2 md:p-3 rounded-2xl text-base md:text-xl bg-gray-400 w-full"
+    placeholder="Nombre"
+    name="Nombre"
+    id="Nombre"
+    required
+  >
+  <input 
+    type="email" 
+    class="border-2 md:border-3 border-black p-2 md:p-3 rounded-2xl text-base md:text-xl bg-gray-400 w-full"
+    placeholder="Correo Electrónico"
+    name="Email"
+    id="Email"
+    required
+  >
+  <input 
+    type="text"
+    class="border-2 md:border-3 border-black p-2 md:p-3 rounded-2xl text-base md:text-xl bg-gray-400 w-full"
+    placeholder="Asunto"
+    name="Asunto"
+    id="Asunto"
+  >
+  <textarea 
+    id="Mensaje"
+    placeholder="Mensaje"
+    name="Mensaje"
+    class="border-2 md:border-3 border-black p-3 md:p-4 rounded-2xl text-base md:text-xl bg-gray-400 h-32 md:h-40 w-full resize-none"
+    required
+  ></textarea>
+
+  <button 
+    id="btnEnviar"
+    type="submit"
+    class="border-2 md:border-3 border-black font-semibold p-3 text-yellow-300 bg-gradient-to-b from-[#a218f3] to-[#320738] cursor-pointer rounded-2xl group"
+  >
+    <span class="group-hover:scale-105 transition-transform duration-200 flex flex-row justify-center items-center gap-3">ENVIAR <Send class="size-6" /></span>
+  </button>
+</form>
+
+    </div>
+
   </div>
 </div>
+
 
 <script type="module">
   window.onbeforeunload = () => {
