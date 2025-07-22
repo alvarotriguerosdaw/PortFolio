@@ -1,47 +1,88 @@
-<header >
+<header>
   <nav class="fixed w-full h-16 bg-[#bcc0ca] flex items-center shadow z-50 border-3 border-black">
-    <ul class="grid grid-cols-[10%_repeat(4,1fr)] w-full h-full items-center text-center">
+    
+    <!-- Botón hamburguesa (visible solo en móvil) -->
+    <button id="btn-hamburguesa" class="md:hidden ml-4 z-60 focus:outline-none" aria-label="Abrir menú">
+      <!-- Icono hamburguesa simple con 3 líneas -->
+      <div class="space-y-1">
+        <span class="block w-6 h-0.5 bg-black"></span>
+        <span class="block w-6 h-0.5 bg-black"></span>
+        <span class="block w-6 h-0.5 bg-black"></span>
+      </div>
+    </button>
+    
+    <!-- Menú horizontal: oculto en móvil, visible md+ -->
+    <ul class="hidden md:grid grid-cols-[10%_repeat(4,1fr)] w-full h-full items-center text-center">
       
-      <li id="nav-home" class="text-lg font-semibold h-full relative flex flex-col items-center justify-center">
+      <li id="nav-home" class="text-lg  h-full relative flex flex-col items-center justify-center">
         <div>
           <a href="#home">&lt;AT/&gt;</a>
         </div>
-        <div id="underline-home" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
+        <div id="underline-home" class="bg-[#8CCDEB] w-full h-2 absolute bottom-0 left-0 hidden border-3 border-black"></div>      
       </li>
 
       <li id="nav-about-me" class="h-full relative flex flex-col items-center justify-center">
         <div>
           <a href="#about-me">About me</a>
         </div>
-        <div id="underline-about-me" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
+        <div id="underline-about-me" class="bg-[#8CCDEB] w-full h-2 absolute bottom-0 left-0 hidden border-3 border-black"></div>      
       </li>
 
       <li id="nav-proyectos" class="h-full relative flex flex-col items-center justify-center">
         <div>
           <a href="#proyectos">Proyectos</a>
         </div>
-        <div id="underline-proyectos" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
+        <div id="underline-proyectos" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden border-3 border-black"></div>      
       </li>
 
       <li id="nav-skills" class="h-full relative flex flex-col items-center justify-center">
         <div>
           <a href="#skills">Skills</a>
         </div>
-        <div id="underline-skills" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
+        <div id="underline-skills" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden border-3 border-black"></div>      
       </li>
 
       <li id="nav-contacto" class="h-full relative flex flex-col items-center justify-center">
         <div>
-          <a>Contacto</a>
+          <a href="#contacto">Contacto</a>
         </div>
-        <div id="underline-contacto" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden"></div>      
+        <div id="underline-contacto" class="bg-amber-300 w-full h-2 absolute bottom-0 left-0 hidden border-3 border-black"></div>      
       </li>
     </ul>
   </nav>
+
+  <!-- Menú lateral móvil (oculto por defecto) -->
+  <div id="menu-lateral" class="fixed top-0 left-0 h-full w-64 bg-[#bcc0ca] shadow-lg transform -translate-x-full transition-transform duration-300 z-50">
+    <ul class="flex flex-col mt-20 space-y-6 pl-6 text-lg font-semibold">
+      <li><a href="#home" class="block" onclick="cerrarMenu()"> &lt;AT/&gt; </a></li>
+      <li><a href="#about-me" class="block" onclick="cerrarMenu()">About me</a></li>
+      <li><a href="#proyectos" class="block" onclick="cerrarMenu()">Proyectos</a></li>
+      <li><a href="#skills" class="block" onclick="cerrarMenu()">Skills</a></li>
+      <li><a href="#contacto" class="block" onclick="cerrarMenu()">Contacto</a></li>
+    </ul>
+  </div>
+
+  <!-- Overlay para cerrar menú -->
+  <div id="overlay" class="fixed inset-0 bg-black bg-opacity-50 hidden z-40" onclick="cerrarMenu()"></div>
 </header>
 
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
+    const btnHamburguesa = document.getElementById('btn-hamburguesa');
+    const menuLateral = document.getElementById('menu-lateral');
+    const overlay = document.getElementById('overlay');
+
+    btnHamburguesa.addEventListener('click', () => {
+      menuLateral.classList.remove('-translate-x-full');
+      overlay.classList.remove('hidden');
+    });
+
+    window.cerrarMenu = () => {
+      menuLateral.classList.add('-translate-x-full');
+      overlay.classList.add('hidden');
+    };
+
+    // Resto de tu IntersectionObserver aquí
     const sections = [
       { id: 'home', navId: 'underline-home' },
       { id: 'about-me', navId: 'underline-about-me' },
@@ -58,12 +99,16 @@
 
         if (!underline) return;
 
+        const li = underline.parentElement;
+
         if (entry.isIntersecting) {
           underline.classList.remove('hidden');
           underline.classList.add('block');
+          li.classList.add('border-l-3', 'border-r-3', 'border-black', 'font-bold');
         } else {
           underline.classList.remove('block');
           underline.classList.add('hidden');
+          li.classList.remove('border-l-3', 'border-r-3', 'border-black', 'font-bold');
         }
       });
     }, {
